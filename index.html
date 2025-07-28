@@ -1,55 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BondhiGolpo Official Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-white">
-    <!-- 🔥 Navbar শুরু -->
-    <nav class="bg-black text-white px-6 py-2 flex justify-between items-center">
-      
-      <!-- 📌 বাম দিকে: Stylish বাংলা লেখা "বন্ধীগল্প" -->
-      <a href="#" class="text-30PX font-extrabold tracking-wide text-white" style="font-family: 'Poppins', sans-serif;">
-        বন্ধীগল্প
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BondhiGolpo Official</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@1,400&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-      <!-- 🎯 ডান দিকে: সোশ্যাল মিডিয়া আইকন + মেনু -->
-      <div class="flex items-center space-x-4">
-        <a href="https://www.facebook.com/profile.php?id=100089314342354" class="hover:opacity-75">
-          <img src="fb ico.png" alt="Facebook" class="h-6" />
-        </a>
-        <a href="#" class="hover:opacity-75">
-          <img src="ig ico.png" alt="Instagram" class="h-6" />
-        </a>
-        <a href="#" class="hover:opacity-75">
-          <img src="Yt ico.png" alt="YouTube" class="h-6" />
-        </a>
+  <!-- Navbar -->
+  <nav>
+  <a href="#" class="logo">BondhiGolpo</a>
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=100089314342354" target="_blank">
+      <img src="fb ico.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/bondhigolpo/" target="_blank">
+      <img src="ig ico.png" alt="Instagram">
+    </a>
+  </div>
+</nav>
 
-        <!-- 📌 মেনু আইকন -->
-        <button class="text-white focus:outline-none">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-    </nav>
-    <!-- 🔥 Navbar শেষ -->
+  
+  <!-- Hero -->
+  <section class="hero fade-in">
+    <h1>Welcome to BondhiGolpo</h1>
+    <p>Memories you create, and we capture</p>
+  </section>
 
-    <!-- 📌 Page Content শুরু -->
-    <div class="p-6 text-center">
-      <!-- 🌟 Stylish হেডিং (Gold Cinematic Look) -->
-<h1 class="text-4xl font-extrabold bg-gradient-to-r from-yellow-400 to-yellow-600 text-transparent bg-clip-text tracking-wider"
-style="font-family: 'Playfair Display', serif;">
-Welcome to BondhiGolpo
-</h1>
+  <!-- Our Works -->
+  <section class="works fade-in">
+    <h2>Recent Works</h2>
+    <div class="works-grid">
+      <img src="bn1.webp" alt="Work">
+      <img src="DSC08900-Edit.webp" alt="Work">
+      <img src="BN-06904.webp" alt="Work">
+      <img src="b5.webp" alt="Work">
+      <img src="b3.webp" alt="Work">
+      <img src="b4.webp" alt="Work">
+    </div>
+  </section>
 
-<!-- ✨ Stylish টেক্সট (Warm Brown Tone) -->
-<p class="text-lg font-medium mt-2" style="color: #8B5E3B; font-family: 'Lora', serif; font-style: italic;">
-Memories you create, and we capture
-</p>
+ <!-- Signature Services -->
+  <section class="services fade-in">
+  <h2>Our Signature Services</h2>
+  <div class="service-list">
+    <div>
+      <h3>Moments Preserved</h3>
+      <p>BDT 4,999/-<br>
+      1 Top Photographer<br>
+      4 Hours<br>
+      50 edited photos
+      </p>
+    </div>
+    <div>
+      <h3>Vivid Chronicles</h3>
+      <p>BDT 14,999/-<br>
+      1 Top Photographer + 1 Cinematographer<br>
+      8 Hours<br>
+      100 edited photos + Short video (1–2 min)<br>
+      Pen drive
+      </p>
+    </div>
+    <div>
+      <h3>Eternal Canvas</h3>
+      <p>BDT 26,999/-<br>
+      2 Top Photographers + 1 Cinematographer<br>
+      8 Hours<br>
+      150 edited photos + Promo video (2–3 min)<br>
+      Album + Pen drive
+      </p>
+    </div>
+    <div>
+      <h3>Luminous Tales</h3>
+      <p>BDT 38,999/-<br>
+      2 Top Photographers + 2 Cinematographers + 1 Voice Recorder<br>
+      8 Hours<br>
+      200 edited photos + Full video (5–7 min)<br>
+      Album + Pen drive
+      </p>
+    </div>
+  </div>
+</section>
 
-    
-  </body>
+  <!-- Contact -->
+  <section class="contact fade-in">
+    <h2>Contact Us</h2>
+    <p>Call: +8801603091990 | +8801798-117000 | Email: bondhigolpo@gmail.com</p>
+  </section>
+
+  <footer>
+    © 2025 BondhiGolpo. All Rights Reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

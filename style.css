@@ -1,0 +1,267 @@
+:root {
+  --primary-color: #d4a017;
+  --text-dark: #2c2c2c;
+  --text-warm: #8B5E3B;
+  --bg-light: #fdfdfb;
+  --accent-gradient: linear-gradient(45deg, #e1c699, #b98a00);
+  --transition: 0.3s ease-in-out;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+nav a.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+}
+nav a.logo:hover {
+  color: var(--primary-color);
+}
+nav .socials img {
+  height: 24px;
+  margin-left: 1rem;
+  transition: var(--transition);
+}
+nav .socials img:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Hero */
+.hero {
+  padding: 2rem 2rem; /* Reduced top padding from 4rem to 2rem */
+  text-align: center;
+  background: linear-gradient(rgba(255,255,255,0.95), var(--bg-light));
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0; /* Reduced margin for tighter spacing */
+  animation: fadeSlide 1.5s ease-out;
+}
+.hero p {
+  color: #6B4E31; /* Darker shade derived from --text-warm for contrast */
+  font-style: italic;
+  font-size: 1.2rem;
+  animation: fadeSlide 2s ease-out;
+}
+
+/* Works */
+.works {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.works h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.works-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.works-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,215,0,0.3);
+}
+
+/* Signature Services */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--bg-light);
+}
+.services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-dark);
+}
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-list div {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.service-list div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--accent-gradient);
+  transition: var(--transition);
+}
+.service-list div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.service-list div:hover::before {
+  height: 8px;
+}
+.service-list h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+.service-list p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Contact */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(rgba(255,255,255,0.9), var(--bg-light));
+}
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.contact p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+.contact button {
+  background: var(--accent-gradient);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.contact button:hover {
+  background: linear-gradient(45deg, #b98a00, #e1c699);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  font-family: 'Lora', serif;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.5rem;
+  }
+  nav a.logo {
+    font-size: 1.8rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .works-grid img {
+    height: 220px;
+  }
+  .service-list div {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  nav a.logo {
+    font-size: 1.5rem;
+  }
+  nav .socials img {
+    height: 20px;
+    margin-left: 0.8rem;
+  }
+  .hero {
+    padding: 1.5rem 1rem; /* Further reduced for mobile */
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .works h2, .services h2, .contact h2 {
+    font-size: 2rem;
+  }
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
