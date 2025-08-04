@@ -4,9 +4,9 @@
   --text-warm: #8B5E3B;
   --bg-light: #fdfdfb;
   --accent-gradient: linear-gradient(45deg, #e1c699, #b98a00);
+  --hero-text-gradient: linear-gradient(90deg, #ffffff, #f0d78c, #ffffff);
   --transition: 0.3s ease-in-out;
 }
-
 body {
   margin: 0;
   font-family: 'Lora', serif;
@@ -15,7 +15,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
 /* Navbar */
 nav {
   display: flex;
@@ -48,29 +47,61 @@ nav .socials img {
 nav .socials img:hover {
   transform: scale(1.2) rotate(5deg);
 }
-
-/* Hero */
+/* Hero with Background Image */
 .hero {
-  padding: 2rem 2rem; /* Reduced top padding from 4rem to 2rem */
+  padding: 8rem 2rem;
   text-align: center;
-  background: linear-gradient(rgba(255,255,255,0.95), var(--bg-light));
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('BondhiGolpo (24 of 36).webp') no-repeat center center/cover;
+  z-index: -2;
+  animation: zoomBackground 20s infinite alternate;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));
+  z-index: -1;
+}
+.hero-content {
+  max-width: 800px;
+  z-index: 1;
 }
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  background: var(--accent-gradient);
+  font-size: 3.5rem;
+  margin: 0.5rem 0;
+  background: var(--hero-text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0.5rem 0; /* Reduced margin for tighter spacing */
-  animation: fadeSlide 1.5s ease-out;
+  animation: fadeInDown 1.5s ease-out, shimmer 3s infinite;
+  background-size: 200% auto;
 }
 .hero p {
-  color: #6B4E31; /* Darker shade derived from --text-warm for contrast */
+  color: rgba(255,255,255,0.9);
   font-style: italic;
-  font-size: 1.2rem;
-  animation: fadeSlide 2s ease-out;
+  font-size: 1.4rem;
+  animation: fadeInUp 1.8s ease-out, fadeInOut 4s infinite alternate;
+  animation-fill-mode: both;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-
 /* Works */
 .works {
   padding: 4rem 2rem;
@@ -102,7 +133,6 @@ nav .socials img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(255,215,0,0.3);
 }
-
 /* Signature Services */
 .services {
   padding: 4rem 2rem;
@@ -159,7 +189,6 @@ nav .socials img:hover {
   color: #555;
   line-height: 1.8;
 }
-
 /* Contact */
 .contact {
   padding: 4rem 2rem;
@@ -192,7 +221,6 @@ nav .socials img:hover {
   background: linear-gradient(45deg, #b98a00, #e1c699);
   transform: scale(1.05);
 }
-
 /* Footer */
 footer {
   background: black;
@@ -202,7 +230,6 @@ footer {
   font-size: 0.95rem;
   font-family: 'Lora', serif;
 }
-
 /* Fade-in Animation */
 .fade-in {
   opacity: 0;
@@ -213,24 +240,33 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* Responsive Tweaks */
 @media (max-width: 768px) {
   nav {
     padding: 1rem 1.5rem;
   }
+  
   nav a.logo {
     font-size: 1.8rem;
   }
+  
+  .hero {
+    padding: 6rem 1rem;
+    min-height: 60vh;
+  }
+  
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
+  
   .hero p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
+  
   .works-grid img {
     height: 220px;
   }
+  
   .service-list div {
     padding: 1.5rem;
   }
@@ -239,29 +275,89 @@ footer {
   nav a.logo {
     font-size: 1.5rem;
   }
+  
   nav .socials img {
     height: 20px;
     margin-left: 0.8rem;
   }
+  
   .hero {
-    padding: 1.5rem 1rem; /* Further reduced for mobile */
+    padding: 5rem 1rem;
+    min-height: 50vh;
   }
+  
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
   .works h2, .services h2, .contact h2 {
     font-size: 2rem;
   }
+  
   .works-grid {
     grid-template-columns: 1fr;
   }
+  
   .service-list {
     grid-template-columns: 1fr;
   }
 }
-
 /* Animations */
 @keyframes fadeSlide {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomBackground {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
